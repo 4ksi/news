@@ -1,0 +1,12 @@
+{
+    "name": "aksi/news",
+    "authors": [
+        {
+            "name": "4ksi",
+            "email": "naqsee@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.17"
+    }
+}
