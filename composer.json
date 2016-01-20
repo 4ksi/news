@@ -7,6 +7,13 @@
         }
     ],
     "require": {
-        "monolog/monolog": "^1.17"
-    }
+        "monolog/monolog": "^1.17",
+        "twbs/bootstrap": "^3.3"
+    },
+
+    "scripts": {
+        "post-update-cmd": [
+            "mkdir -p public/bootstrap",
+            "cp -R vendor/twbs/bootstrap/dist/ public/bootstrap/"
+        ]}
 }
