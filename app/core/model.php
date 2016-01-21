@@ -1,8 +1,6 @@
 <?php
-class Model
+abstract class Model
 {
-    public function get_data()
-    {
-    }
+    abstract function get();
 }
 ?>
