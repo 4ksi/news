@@ -7,7 +7,6 @@
     <title>Weazzel News</title>
 </head>
 <body>
-
     <header>
         <ul class="nav nav-tabs nav-justified">
             <li>
@@ -19,7 +18,8 @@
         </ul>
     </header>
 
-    <?php include 'app/views/'.$content_view; ?>
-
+    <div class="container-fluid">
+        <?php include 'app/views/'.$content_view; ?>
+    </div>
 </body>
 </html>
