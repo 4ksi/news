@@ -13,7 +13,7 @@ class Model_News extends Model
             array(
                 'Title' => 'Ipsum #2',
                 'Date' => '12.12.2012',
-                'Anounce' => 'Explicabo reprehenderit, id quo? Aperiam aliquam odit quisquam odio, sit facilis perspiciatis omnis ',
+                'Anounce' => 'Explicabo reprehenderit, id quo? Aperiam aliquam odit quisquam odio, sit facilis perspiciatis omnis Aperiam aliquam odit quisquam odio, sit facilis perspiciatis omnis Aperiam aliquam odit quisquam odio, sit facilis perspiciatis omnis Aperiam aliquam odit quisquam odio, sit facilis perspiciatis omnis ',
                 'Full' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque temporibus explicabo reprehenderit, id quo? Aperiam aliquam odit quisquam odio, sit facilis perspiciatis omnis aut illum eveniet eaque, quas deserunt eligendi.'
             ),
             // todo
