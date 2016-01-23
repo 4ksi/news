@@ -1,7 +1,7 @@
 <?php
-Class Controller_About extends Controller
+Class ControllerAbout extends Controller
 {
-    function action_index()
+    function actionIndex()
     {
         $this->view->generate('about_view.php', 'template_view.php');
     }
