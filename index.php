@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-require_once 'app/load.php';
-Route::start(); // запускаем маршрутизатор
+// Подключаем компоненты
+define('ROOT', dirname(__FILE__));
+require_once ROOT . '/app/load.php';
+
+// Вызываем роутер
+$router = new Router();
+$router->start();
+
 ?>
