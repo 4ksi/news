@@ -34,6 +34,7 @@ class ControllerNews
 
     function actionDelete($id)
     {
+        News::deleteItem($id);
         header("Location: /news");
     }
 
@@ -46,13 +47,14 @@ class ControllerNews
         if (isset($_POST['submit'])) {
             // Если форма отправлена
             // Получаем данные из формы редактирования
-            $options['title'] = $_POST['title'];
-            $options['announce'] = $_POST['announce'];
-            $options['full_news'] = $_POST['full_news'];
+            $options['title']      = $_POST['title'];
+            $options['announce']   = $_POST['announce'];
+            $options['full_news']  = $_POST['full_news'];
 
-            News::editNewsById($id, $options);
+            if (News::editNewsById($id, $options)){
+                header("Location: /news/view/$id");
+            }
 
-            header("Location: /news");
         }
     }
 }
