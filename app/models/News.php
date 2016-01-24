@@ -60,5 +60,25 @@ class News extends Db
             return $result->execute();
         }
     }
+
+    public static function addNews($values)
+    {
+        $date = date('d-m-Y');
+
+        $connect = Db::openConnection();
+        $query = 'INSERT INTO news '
+               . '(title, announce, full_news, created_at) '
+               . 'VALUES '
+               . '(:title, :announce, :full_news, :created_at)';
+
+        $result = $connect->prepare($query);
+        $result->bindParam(':title',        $values['title']);
+        $result->bindParam(':announce',     $values['announce']);
+        $result->bindParam(':full_news',    $values['full_news']);
+        $result->bindParam(':created_at',   $date);
+
+        $result->execute();
+    }
+
 }
 ?>

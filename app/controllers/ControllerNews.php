@@ -32,10 +32,37 @@ class ControllerNews
 
     }
 
-    function actionDelete($id)
+    function actionAdd()
     {
-        News::deleteItem($id);
-        header("Location: /news");
+
+        $this->view->generate('news/add.php', 'template.php');
+
+        if (isset($_POST['submit'])) {
+            // Если форма отправлена
+            // Получаем данные из формы
+            $values['title']      = $_POST['title'];
+            $values['announce']   = $_POST['announce'];
+            $values['full_news']  = $_POST['full_news'];
+
+            // Флаг ошибок в форме
+            $errors = false;
+
+            // Если не заполнена форма
+            if (!isset($values['title']) & !isset($values['announce']) & !isset($values['full_news'])) {
+                $errors[] = 'Заполните поля';
+                echo $errors[0];
+            }
+
+            if ($errors == false) {
+                // Если ошибок нет
+                // Добавляем новую новость
+                $id = News::addNews($values);
+            };
+
+            header("Location: /news/");
+            exit;
+
+            }
     }
 
     function actionEdit($id)
@@ -54,8 +81,13 @@ class ControllerNews
             if (News::editNewsById($id, $options)){
                 header("Location: /news/view/$id");
             }
-
         }
+    }
+
+    function actionDelete($id)
+    {
+        News::deleteItem($id);
+        header("Location: /news");
     }
 }
 ?>
