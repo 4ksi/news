@@ -8,9 +8,15 @@ class Db
         $user       = 'postgres';
         $password   = '1212';
 
-        $connect = new PDO("pgsql:host=$host;dbname=$database", $user, $password);
-
-        return $connect;
+        try {
+            $connect = new PDO("pgsql:host=$host;dbname=$database", $user, $password);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $connect;
+        }
+        catch (PDOException $e) {
+            echo "Code: {$e->getCode()} <br>
+                  Error Message: {$e->getMessage()} <br>";
+        }
     }
 
     protected static function closeConnection($connect)
