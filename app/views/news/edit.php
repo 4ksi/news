@@ -8,12 +8,12 @@
         <form action="#" method="POST">
             <div class="form-group">
                 <label for="inputTitle">Заголовок
-                    <input id="inputTitle" name="title" type="text" class="form-control" value="<?= $data['title']?>">
+                    <input id="inputTitle" name="title" type="text" class="form-control" size="60" maxlength="60" value="<?= $data['title']?>">
                 </label>
             </div>
             <div class="form-group">
                 <label for="inputAnnounce">Анонс
-                    <textarea id="inputAnnounce" name="announce" class="form-control" rows="4" cols="50"><?= $data['announce'] ?></textarea>
+                    <textarea id="inputAnnounce" name="announce" class="form-control" maxlength="500" rows="4" cols="60"><?= $data['announce'] ?></textarea>
                 </label>
             </div>
             <div class="form-group">
