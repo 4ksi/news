@@ -1,7 +1,4 @@
 <?php
-
-include_once ROOT. '/app/models/News.php';
-
 class ControllerNews
 {
 
