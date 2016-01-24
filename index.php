@@ -1,11 +1,9 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-// Подключаем компоненты
+// Подключаем автолоадер классов
 define('ROOT', dirname(__FILE__));
-require_once ROOT . '/app/components/Router.php';
-require_once ROOT.  '/app/components/Db.php';
-require_once ROOT.  '/app/views/View.php';
+require_once ROOT . '/app/components/Autoload.php';
 
 // Вызываем роутер
 $router = new Router();
