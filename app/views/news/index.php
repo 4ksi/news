@@ -29,6 +29,6 @@
     <?php endforeach ?>
 
     <div class="pull-right">
-        <a style="position:fixed; right: 100px; bottom:30px;" href="/news" class="btn btn-success">Добавить новость</a>
+        <a style="position:fixed; right: 100px; bottom:30px;" href="/news/add" class="btn btn-success">Добавить новость</a>
     </div>
 </div>
