@@ -32,5 +32,28 @@ class ControllerNews
 
     }
 
+    function actionDelete($id)
+    {
+        header("Location: /news");
+    }
+
+    function actionEdit($id)
+    {
+        $newsItem = News::getNewsItemById($id);
+
+        $this->view->generate('news/edit.php', 'template.php', $newsItem);
+
+        if (isset($_POST['submit'])) {
+            // Если форма отправлена
+            // Получаем данные из формы редактирования
+            $options['title'] = $_POST['title'];
+            $options['announce'] = $_POST['announce'];
+            $options['full_news'] = $_POST['full_news'];
+
+            News::editNewsById($id, $options);
+
+            header("Location: /news");
+        }
+    }
 }
 ?>

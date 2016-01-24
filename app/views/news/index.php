@@ -1,8 +1,8 @@
-<div class="container-fluid">
-    <div class="page-header">
-        <h1 class="text-center">Последние новости</h1>
+<div class='container-fluid'>
+    <div class='page-header'>
+        <h1 class='text-center'>Последние новости</h1>
     </div>
-    <div class="container-fluid">
+    <div class='container-fluid'>
         <?php foreach ($data as $newsItem): ?>
             <div class='row'>
                 <h2 class='text-uppercase'>
@@ -17,10 +17,11 @@
 
             <div class='row'>
                 <div class='btn-group' role='group'>
-
-                    <button type='button' class='btn btn-default'>EDIT</button>
                     <button type='button' class='btn btn-default'>
-                        <a href="#">DELETE</a>
+                        <a href="edit/<?= $newsItem['id'] ?>">EDIT</a>
+                    </button>
+                    <button type='button' class='btn btn-default'>
+                        <a href="delete/<?= $newsItem['id'] ?>">DELETE</a>
                     </button>
                 </div>
             </div>

@@ -5,12 +5,15 @@ class News extends Db
     public static function getNewsList()
     {
         $connect = Db::openConnection();
-        $result = $connect->query('SELECT id, title, announce, created_at '
+        if ($connect) {
+            $result = $connect->query('SELECT id, title, announce, created_at '
                 . 'FROM news_db '
                 . 'ORDER BY id DESC '
                 . 'LIMIT 10');
 
-        return $result;
+            return $result;
+        }
+
     }
 
     public static function getNewsItemById($id)
@@ -19,9 +22,7 @@ class News extends Db
 
         if ($id) {
             $connect = Db::openConnection();
-            $result = $connect->query('SELECT * '
-                    . 'FROM news_db '
-                    . 'WHERE id=' . $id);
+            $result = $connect->query('SELECT * FROM news_db WHERE id=' . $id);
             $result->setFetchMode(PDO::FETCH_ASSOC);
             $newsItem = $result->fetch();
 
@@ -29,10 +30,21 @@ class News extends Db
         }
     }
 
-    public static function deleteItem($id)
+    public static function editNewsById($id, $options)
     {
-
+        $connect = Db::openConnection();
     }
 
+    public static function deleteItem($id)
+    {
+        if ($id) {
+            $connect = Db::openConnection();
+            $query = 'DELETE FROM news_db WHERE id = :id';
+            $result = $connect->prepare($query);
+            $result->bindParam(':id', $id);
+
+            return $result;
+        }
+    }
 }
 ?>
