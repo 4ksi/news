@@ -63,7 +63,7 @@ class News extends Db
 
     public static function addNews($values)
     {
-        $date = date('d-m-Y');
+        $date = date('Y-m-d');
 
         $connect = Db::openConnection();
         $query = 'INSERT INTO news '
