@@ -4,12 +4,12 @@ class Db
     protected static function openConnection()
     {
         $host       = 'localhost';
-        $database   = 'postgres';
-        $user       = 'postgres';
-        $password   = '1212';
+        $database   = 'news';
+        $user       = 'root';
+        $password   = 'qwerty';
 
         try {
-            $connect = new PDO("pgsql:host=$host;dbname=$database", $user, $password);
+            $connect = new PDO("mysql:host=$host;dbname=$database", $user, $password);
             $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $connect;
         }

@@ -7,7 +7,7 @@ class Router
     public function __construct()
     {
         // Указываем путь к файлу с маршрутами
-        $routesPath = (ROOT.'/app/config/routes.php');
+        $routesPath = (ROOT . '/app/config/routes.php');
         $this->routes = include($routesPath);
     }
 
@@ -60,4 +60,3 @@ class Router
         }
     }
 }
-?>
