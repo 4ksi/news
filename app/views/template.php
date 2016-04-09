@@ -10,7 +10,7 @@
     <header>
         <ul class="nav nav-tabs nav-justified">
             <li>
-                <a href="/news"><span class="glyphicon glyphicon-home"></span> Главная</a>
+                <a href="/"><span class="glyphicon glyphicon-home"></span> Главная</a>
             </li>
             <li>
                 <a href="/about"><span class="glyphicon glyphicon-question-sign"></span> сайте</a>

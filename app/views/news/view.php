@@ -7,7 +7,7 @@
         </div>
         <div class="row">
 
-            <a class="btn btn-primary" href="/news/">Назад</a>
+            <a class="btn btn-primary" href="/">Назад</a>
 
             <div class="btn-group pull-right">
                 <a class="btn btn-default" href="/news/edit/<?=$data['id']?>">

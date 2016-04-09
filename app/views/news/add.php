@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class='page-header'>
         <div class="row">
-            <a class="btn btn-primary" href="/news/">Назад</a>
+            <a class="btn btn-primary" href="/">Назад</a>
         </div>
     </div>
     <div class="row">
