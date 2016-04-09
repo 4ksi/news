@@ -8,19 +8,6 @@ class ControllerNews
     }
 
 
-    function action()
-    {
-        $this->actionIndex();
-    }
-
-    function actionIndex()
-    {
-        $newsList = array();
-        $newsList = News::getNewsList();
-
-        $this->view->generate('news/index.php', 'template.php', $newsList);
-    }
-
     function actionView($id)
     {
         $newsItem = News::getNewsItemById($id);
@@ -56,7 +43,7 @@ class ControllerNews
                 $id = News::addNews($values);
             };
 
-            header("Location: /news/");
+            header("Location: /");
             exit;
 
             }
@@ -84,7 +71,7 @@ class ControllerNews
     function actionDelete($id)
     {
         News::deleteItem($id);
-        header("Location: /news");
+        header("Location: /");
     }
 }
 ?>
