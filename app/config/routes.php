@@ -8,6 +8,5 @@ return array(
 
     'about'                 => 'about/index',
 
-    'index.php'             => 'news/index',
-    ''                      => 'news/index',
+    ''                      => '',
 );
